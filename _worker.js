@@ -1,10 +1,10 @@
 
 import { connect } from 'cloudflare:sockets';
 
-let userID = '';
-let proxyIP = '';
+let userID = 'ea5202a6-72dc-47e7-bdc9-baa547914c39';
+let proxyIP = 'ProxyIP.US.fxxk.dedyn.io:443';
 let DNS64Server = '';
-//let sub = '';
+//let sub = 'curly-dingyue-sub.946727185.workers.dev';
 let subConverter = atob('U1VCQVBJLkNNTGl1c3Nzcy5uZXQ=');
 let subConfig = atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvY29uZmlnL0FDTDRTU1JfT25saW5lX01pbmlfTXVsdGlNb2RlLmluaQ==');
 let subProtocol = 'https';
@@ -180,14 +180,15 @@ export default {
                     const today = new Date(now);
                     today.setHours(0, 0, 0, 0);
                     const UD = Math.floor(((now - today.getTime()) / 86400000) * 24 * 1099511627776 / 2);
-                    let pagesSum = UD;
-                    let workersSum = UD;
-                    let total = 24 * 1099511627776;
+                    let pagesSum = 0;
+                    let workersSum = 0;
+                    let total = 99 * 1099511627776;
                     if (env.CF_EMAIL && env.CF_APIKEY) {
                         const usage = await getUsage(env.CF_ID, env.CF_EMAIL, env.CF_APIKEY, env.CF_ALL);
                         pagesSum = usage[1];
                         workersSum = usage[2];
-                        total = env.CF_ALL ? Number(env.CF_ALL) : (1024 * 100); // 100K
+                        // 如果有环境变量设置，则使用环境变量的值
+                        total = env.CF_ALL ? Number(env.CF_ALL) : total;  // 保留环境变量的优先级，但默认值改为99TB
                     }
                     if (userAgent && userAgent.includes('mozilla')) {
                         return new Response(维列斯Config, {
