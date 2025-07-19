@@ -181,7 +181,7 @@ export default {
                     const UD = Math.floor(((now - today.getTime()) / 86400000) * 24 * 1099511627776 / 2);
                     let pagesSum = 0;
                     let workersSum = 0;
-                    let total = 99 * 1099511627776;
+                    let total = 99 * 1024 * 1099511627776; // 99PB
                     if (env.CF_EMAIL && env.CF_APIKEY) {
                         const usage = await getUsage(env.CF_ID, env.CF_EMAIL, env.CF_APIKEY, env.CF_ALL);
                         pagesSum = usage[1];
