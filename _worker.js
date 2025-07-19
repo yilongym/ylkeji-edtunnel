@@ -1368,8 +1368,8 @@ function 配置信息(UUID, 域名地址) {
 }
 
 let subParams = ['sub', 'base64', 'b64', 'clash', 'singbox', 'sb'];
-const cmad = 'telegram 交流群 技术大佬~在线发牌!<br>' +
-'<a href="https://t.me/CMLiussss" target="_blank">https://t.me/yilong03</a>' +
+const cmad = 'telegram 交流群 技术大佬~在线分享!<br>' +
+'<a href="https://t.me/yilong03" target="_blank">https://t.me/yilong03</a>' +
 '<br>---------------------------------------------------------------<br>' +
 'github 项目地址 Star!Star!Star!!!<br>' +
 '<a href="https://github.com/yilongym/ylkeji-edtunnel" target="_blank">https://github.com/yilongym/ylkeji-edtunnel</a>';
